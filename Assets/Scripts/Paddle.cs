@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeddleMove : MonoBehaviour
+public class Paddle : MonoBehaviour
 {
-    [SerializeField] float ScreenWidthInUnits = 16f;
+    [SerializeField] float ScreenWidthInUnits = 16f; //Screen hight = 6*2 = 12 unity --> aspect ratio 4:3 --> screen width = 16 units
+    [SerializeField] float minX = 1f;
+    [SerializeField] float maxX = 15f;
+
     float MousePosInUnitsX;
 
     // Start is called before the first frame update
@@ -17,7 +20,8 @@ public class PeddleMove : MonoBehaviour
     void Update()
     {
         MousePosInUnitsX = Input.mousePosition.x / Screen.width * ScreenWidthInUnits;
-        Vector2 paddlePos = new Vector2(MousePosInUnitsX, transform.position.y);
+        Vector2 paddlePos = new Vector2(transform.position.x, transform.position.y);
+        paddlePos.x = Mathf.Clamp(MousePosInUnitsX, minX, maxX);
         transform.position = paddlePos;
     }
 }
