@@ -6,9 +6,11 @@ public class Block : MonoBehaviour
 {
 
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject blockSparklesVFX;
 
     //Cached Reference
     Level level;
+    GameSession gameStatus;
 
     // Start is called before the first frame update
 
@@ -16,6 +18,9 @@ public class Block : MonoBehaviour
     {
         level = FindObjectOfType<Level>();
         level.CountBreakableBlocks();
+
+        gameStatus = FindObjectOfType<GameSession>();
+
     }
 
 
@@ -26,8 +31,20 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+        PlayAudio();
         Destroy(gameObject);
+        TriggerSparklesVFX();
         level.BlockDestroyed();
+        gameStatus.AddToScore();
+    }
+
+    private void PlayAudio()
+    {
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+    }
+
+    private void TriggerSparklesVFX()
+    {
+        GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
     }
 }
