@@ -142,6 +142,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 15cf7e4d8a979024c9d2dd9fb84436b6, type: 3}
   - {fileID: 8300000, guid: d0d2dc531b445694090d11cbf61b5b14, type: 3}
   - {fileID: 8300000, guid: b68f1dd7a3608ab428941fcabda8ca82, type: 3}
+  randomBounceFactor: 0.5
+  fixBallToPaddle: 1
 --- !u!82 &8036651240549232814
 AudioSource:
   m_ObjectHideFlags: 0

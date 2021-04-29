@@ -9,6 +9,7 @@ public class Paddle : MonoBehaviour
     [SerializeField] float maxX = 15f;
 
     float MousePosInUnitsX;
+    //bool shrinkPaddle;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // Start is called before the first frame update
     void Start()

@@ -82,6 +82,7 @@ public class Block : MonoBehaviour
         TriggerSparklesVFX();
         level.BlockDestroyed();
         gameSession.AddToScore();
+
     }
 
     private void PlayAudio()
