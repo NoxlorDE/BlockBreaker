@@ -1,0 +1,5 @@
+- Game Over Screen: Add possibility to restart last played screen 
+- Slow motion after last block was desitroyed before transitioning to next scene
+- Make multiple balls possible --> LoseTrigger reacts only on last ball available
+- Add Randomized Push (left or right direction)
+- Idea: Paddle shrinks whith each destroyed block
