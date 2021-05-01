@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            myRigidbody2D.velocity = new Vector2(xPush, yPush);
+            myRigidbody2D.velocity = new Vector2(Random.Range(xPush * -1, xPush), yPush);
             hasStarted = true;
         }
     }

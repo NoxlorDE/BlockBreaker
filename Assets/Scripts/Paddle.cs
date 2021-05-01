@@ -13,9 +13,6 @@ public class Paddle : MonoBehaviour
     GameSession gameSession;
     Ball ball;
     
-
-    //bool shrinkPaddle;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
     // Start is called before the first frame update
     void Start()
     {
