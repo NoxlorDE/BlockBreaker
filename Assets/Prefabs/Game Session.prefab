@@ -44,10 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ceb8d80a9b7d7742ab7633af451ea07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 0.75
+  gameSpeed: 0.8
   pointsPerBlockDestroyed: 83
   scoreText: {fileID: 366690897576017746}
+  winText: {fileID: 6761649487259735229}
+  isAutoPlayEnabled: 0
   currentScore: 0
+  currentScene: 0
 --- !u!1001 &6305088271164844101
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,6 +156,17 @@ RectTransform:
 --- !u!114 &366690897576017746 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5951105645085202199, guid: 4b1d9add08e926744b244b1865dab6fc, type: 3}
+  m_PrefabInstance: {fileID: 6305088271164844101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6761649487259735229 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 744809186311978232, guid: 4b1d9add08e926744b244b1865dab6fc, type: 3}
   m_PrefabInstance: {fileID: 6305088271164844101}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

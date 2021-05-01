@@ -7,19 +7,22 @@ public class GameSession : MonoBehaviour
 {
     
     //config paramameters
-    [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
+    [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 0.8f;
     [SerializeField] int pointsPerBlockDestroyed = 83;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI winText;
+    [SerializeField] bool isAutoPlayEnabled;
 
     //state variables
     [SerializeField] int currentScore = 0;
-
+    public int currentScene;
+    float slowMotionSpeed = 0.05f;
 
     private void Awake()
     {
         //Prevent GameStatus to be destroyed each new scene ("Singleton Pattern")-
-        int gameStatusCount = FindObjectsOfType<GameSession>().Length; //Count number of GameStaus objects
-        if(gameStatusCount > 1)
+        int gameStatusCount = FindObjectsOfType<GameSession>().Length; //Count number of GameStatus objects
+        if (gameStatusCount > 1)
         {
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -39,7 +42,17 @@ public class GameSession : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = gameSpeed;
+        if (!FindObjectOfType<Level>().islowMotionEnabled)
+        {
+            Time.timeScale = gameSpeed;
+            winText.text = "";
+        }
+        else
+        {
+            Time.timeScale = slowMotionSpeed;
+            winText.text = "Gewonnen";
+        }
+
     }
 
     public void AddToScore()
@@ -51,6 +64,16 @@ public class GameSession : MonoBehaviour
     public void ResetGameSession() //Reset Game
     {
         Destroy(gameObject);
+    }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
+    }
+
+    public void CurrentScene()
+    {
+        currentScene = FindObjectOfType<SceneLoader>().CurrentScene();
     }
 
 }

@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int currentSceneIndex = CurrentScene();
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
@@ -16,12 +16,21 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         FindObjectOfType<GameSession>().ResetGameSession();
+    }
 
+    public void LoadPreviousScene()
+    {
+        SceneManager.LoadScene(FindObjectOfType<GameSession>().currentScene);
     }
 
     public void QuiGame()
     {
         Application.Quit();
+    }
+
+    public int CurrentScene()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
     }
 
 }
