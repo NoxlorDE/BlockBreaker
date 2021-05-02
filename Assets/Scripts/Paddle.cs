@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    [SerializeField] float ScreenWidthInUnits = 16f; //Screen hight = 6*2 = 12 unity --> aspect ratio 4:3 --> screen width = 16 units
+    [SerializeField] float ScreenWidthInUnits = 16f; //Screen height = 6*2 = 12 unity --> aspect ratio 4:3 --> screen width = 16 units
     [SerializeField] float minX = 1f;
     [SerializeField] float maxX = 15f;
     

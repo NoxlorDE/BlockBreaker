@@ -18,6 +18,8 @@ public class GameSession : MonoBehaviour
     public int currentScene;
     float slowMotionSpeed = 0.05f;
 
+    AudioSource myAudioSource;
+
     private void Awake()
     {
         //Prevent GameStatus to be destroyed each new scene ("Singleton Pattern")-
@@ -50,7 +52,7 @@ public class GameSession : MonoBehaviour
         else
         {
             Time.timeScale = slowMotionSpeed;
-            winText.text = "Gewonnen";
+            winText.text = "You got it!";
         }
 
     }
