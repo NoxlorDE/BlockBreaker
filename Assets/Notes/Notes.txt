@@ -4,3 +4,9 @@
 - Add Randomized Push (left or right direction) --> DONE
 - Idea: Paddle shrinks whith each destroyed block
 - Idea: Increase game speed with each block
+
+ShareMyGames
+https://sharemygame.com/@Weltenlicht/block-breaker
+
+Git Respo:
+https://github.com/weltenlicht/BlockBreaker
